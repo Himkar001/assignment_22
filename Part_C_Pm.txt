@@ -1,0 +1,54 @@
+PART C — INTERVIEW READY
+
+  -------------------------------------
+  Q1. DIFFERENCE BETWEEN loc AND iloc
+  -------------------------------------
+
+Answer:
+
+loc: - Label-based indexing - Uses column/row names - Example:
+df.loc[0:5, ‘Age’]
+
+iloc: - Position-based indexing - Uses integer index - Example:
+df.iloc[0:5, 0:2]
+
+Difference: - loc → labels - iloc → index positions
+
+  ---------------------
+  Q2. CODING QUESTION
+  ---------------------
+
+Task: Filter rows where column value > average
+
+Code: import pandas as pd
+
+df = pd.read_csv(“data.csv”)
+
+avg = df[“Salary”].mean()
+
+filtered = df[df[“Salary”] > avg]
+
+print(filtered.head())
+
+Output: Rows where Salary is greater than average displayed
+
+Explanation: First calculate mean, then filter using condition.
+
+  ---------------------------
+  Q3. PURPOSE OF describe()
+  ---------------------------
+
+Answer:
+
+describe() gives summary statistics of numerical data.
+
+Insights: - Mean → average value - Std → variation - Min/Max → range -
+Percentiles (25%, 50%, 75%) → distribution
+
+Example: df.describe()
+
+Explanation: Helps quickly understand data distribution and spread.
+
+  -----
+  END
+  -----

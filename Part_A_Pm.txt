@@ -1,0 +1,107 @@
+PART A — CONCEPT APPLICATION
+
+  ---------------------------------------
+  DATASET
+  ---------------------------------------
+  Dataset: data.csv (600 rows) Columns:
+  Age, Salary, Purchase_Amount, Category
+
+  ---------------------------------------
+
+1. ML PROBLEM TYPE
+
+Type: Supervised Learning
+
+Reason: Input (Age, Salary) and Output (Purchase_Amount, Category) both
+available.
+
+Types: - Regression → Purchase_Amount (continuous) - Classification →
+Category (categorical)
+
+  ---------------------------------------------------
+  2. DATA HANDLING (PANDAS)
+  ---------------------------------------------------
+  Code: import pandas as pd df =
+  pd.read_csv(“data.csv”) print(df.head())
+  print(df.isnull().sum()) df = df.dropna() df =
+  df[[‘Age’,‘Salary’,‘Purchase_Amount’,‘Category’]]
+
+  Output: First rows displayed correctly Missing
+  values: 0 in all columns
+
+  Explanation: Dataset loaded, cleaned, and required
+  features selected.
+  ---------------------------------------------------
+
+3. REGRESSION
+
+Target: Purchase_Amount
+
+Code: from sklearn.model_selection import train_test_split from
+sklearn.linear_model import LinearRegression from sklearn.metrics import
+mean_squared_error
+
+X = df[[‘Age’,‘Salary’]] y = df[‘Purchase_Amount’]
+
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2)
+
+model = LinearRegression() model.fit(X_train,y_train)
+
+y_pred = model.predict(X_test)
+
+mse = mean_squared_error(y_test,y_pred) print(mse)
+
+Output: MSE ≈ 1.9e+08
+
+Explanation: Model predicts continuous values. MSE shows prediction
+error.
+
+  ---------------------------------------
+  4. CLASSIFICATION
+  ---------------------------------------
+  Target: Category
+
+  Code: from sklearn.preprocessing import
+  LabelEncoder from sklearn.tree import
+  DecisionTreeClassifier from
+  sklearn.metrics import accuracy_score
+
+  le = LabelEncoder() df[‘Category’] =
+  le.fit_transform(df[‘Category’])
+
+  X = df[[‘Age’,‘Salary’]] y =
+  df[‘Category’]
+
+  X_train, X_test, y_train, y_test =
+  train_test_split(X,y,test_size=0.2)
+
+  model = DecisionTreeClassifier()
+  model.fit(X_train,y_train)
+
+  y_pred = model.predict(X_test)
+
+  acc = accuracy_score(y_test,y_pred)
+  print(acc)
+
+  Output: Accuracy ≈ 0.25–0.30
+
+  Explanation: Model predicts categories.
+  Accuracy shows correct predictions.
+  ---------------------------------------
+
+5. COMPARISON
+
+Regression: - Output: Continuous - Metric: MSE - Example: Price
+prediction
+
+Classification: - Output: Categories - Metric: Accuracy - Example: Spam
+detection
+
+  ---------------------------------------
+  CONCLUSION
+  ---------------------------------------
+  - Dataset is supervised learning -
+  Regression → numeric prediction -
+  Classification → category prediction
+
+

@@ -1,0 +1,46 @@
+PART D — AI-AUGMENTED TASK
+
+  ---------------------------------------
+  1. PROMPT GIVEN TO AI
+  ---------------------------------------
+  Explain how to perform data analysis
+  using Pandas and visualization using
+  Matplotlib with examples.
+
+  ---------------------------------------
+
+2. AI OUTPUT (SUMMARY)
+
+import pandas as pd df = pd.read_csv(“data.csv”)
+
+df.head() df.info()
+
+df = df.dropna()
+
+df.describe()
+
+df.groupby(“Category”)[“Purchase_Amount”].mean()
+
+import matplotlib.pyplot as plt
+
+df.groupby(“Category”)[“Purchase_Amount”].mean().plot(kind=‘bar’)
+plt.show()
+
+plt.plot(df[“Age”], df[“Purchase_Amount”]) plt.show()
+
+Explanation: Pandas is used for data analysis. Matplotlib is used for
+visualization.
+
+  ---------------------------------------
+  3. EVALUATION
+  ---------------------------------------
+  Are plots correct? Yes
+
+  Is explanation meaningful? Yes
+  ---------------------------------------
+
+CONCLUSION
+
+AI provides correct and useful explanation.
+
+ 

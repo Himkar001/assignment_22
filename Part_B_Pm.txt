@@ -1,0 +1,75 @@
+PART B — STRETCH PROBLEM
+
+  ---------------------
+  1. GROUPED ANALYSIS
+  ---------------------
+
+Task: Group data by Category and compute mean Purchase_Amount
+
+Code: import pandas as pd
+
+df = pd.read_csv(“data.csv”)
+
+grouped = df.groupby(“Category”)[“Purchase_Amount”].mean()
+print(grouped)
+
+Output: Clothing ≈ 25000
+Electronics ≈ 27000
+Furniture ≈ 26000
+Groceries ≈ 24000
+
+Explanation: Data grouped by category and average purchase calculated.
+
+  -------------
+  2. BAR PLOT
+  -------------
+
+Code: import matplotlib.pyplot as plt
+
+grouped.plot(kind=‘bar’)
+
+plt.title(“Average Purchase Amount by Category”) plt.xlabel(“Category”)
+plt.ylabel(“Average Purchase Amount”)
+
+plt.show()
+
+Output: Bar chart showing comparison of average purchase across
+categories
+
+Explanation: Helps identify highest and lowest performing categories.
+
+  -------------------------
+  3. NUMERICAL COMPARISON
+  -------------------------
+
+Features: Age vs Purchase_Amount
+
+Code (Line Plot): df_sorted = df.sort_values(by=“Age”)
+
+plt.plot(df_sorted[“Age”], df_sorted[“Purchase_Amount”])
+
+plt.title(“Age vs Purchase Amount”) plt.xlabel(“Age”)
+plt.ylabel(“Purchase Amount”)
+
+plt.show()
+
+Output: Line graph showing trend between age and purchase
+
+Explanation: Shows how purchase amount varies with age.
+
+  -------------
+  4. INSIGHTS
+  -------------
+
+-   Electronics has highest average purchase
+-   Groceries has lowest average purchase
+-   No strong relation between age and purchase (random data)
+
+  ------------
+  CONCLUSION
+  ------------
+
+-   Grouping summarizes data effectively
+-   Visualization helps understand patterns
+
+
