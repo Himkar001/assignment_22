@@ -1,0 +1,59 @@
+PART B — Stretch Problem
+
+Dataset: Diamonds dataset
+
+1.  Grouped Analysis
+
+Code: grouped = df.groupby(‘cut’)[‘price’].mean() grouped
+
+Output: Average price of diamonds for each cut category.
+
+Explanation: Data is grouped by the categorical column ‘cut’ and mean
+price is calculated.
+
+------------------------------------------------------------------------
+
+2.  Bar Plot (Grouped Results)
+
+Code: grouped.plot(kind=‘bar’) plt.xlabel(“Cut”) plt.ylabel(“Average
+Price”) plt.title(“Average Price by Cut”) plt.show()
+
+Output: Bar chart showing average price for each cut.
+
+Explanation: Helps compare average prices across different cut
+categories.
+
+------------------------------------------------------------------------
+
+3.  Compare Two Numerical Features
+
+Option A — Line Chart
+
+Code: df[[‘carat’, ‘price’]].head(100).plot() plt.title(“Carat vs Price
+Trend”) plt.show()
+
+Output: Line chart showing trend of carat and price.
+
+Explanation: Shows how carat and price vary together.
+
+------------------------------------------------------------------------
+
+Option B — KDE Plot
+
+Code: sns.kdeplot(df[‘carat’], label=‘Carat’) sns.kdeplot(df[‘price’],
+label=‘Price’) plt.legend() plt.title(“Carat vs Price Distribution”)
+plt.show()
+
+Output: Density curves of carat and price.
+
+Explanation: Shows distribution and spread of both numerical features.
+
+------------------------------------------------------------------------
+
+4.  Insights from Visualizations
+
+-   Different cut categories have different average prices
+-   Price has a wider spread compared to carat
+-   Carat values are more concentrated
+-   Price distribution is skewed
+-   Larger carat diamonds tend to have higher prices

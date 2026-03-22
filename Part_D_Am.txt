@@ -1,0 +1,45 @@
+PART D — AI-Augmented Task
+
+1.  Prompt AI:
+
+“Explain how to perform data analysis using Pandas and visualization
+using Matplotlib with examples.”
+
+------------------------------------------------------------------------
+
+2.  AI Output:
+
+Data analysis using Pandas involves loading data, cleaning it, selecting
+relevant columns, filtering rows, and computing statistics.
+
+Example:
+
+import pandas as pd import matplotlib.pyplot as plt
+
+df = pd.read_csv(“data.csv”)
+
+print(df.head())
+
+print(df.describe())
+
+filtered = df[df[‘price’] > 5000]
+
+Visualization using Matplotlib helps in understanding patterns and
+distributions.
+
+Example:
+
+plt.hist(df[‘price’]) plt.title(“Price Distribution”) plt.show()
+
+df[‘price’].plot() plt.title(“Price Trend”) plt.show()
+
+------------------------------------------------------------------------
+
+3.  Evaluation:
+
+Are plots correct? Yes, the histogram correctly shows the distribution
+of values, and the line plot shows trends.
+
+Is the explanation meaningful? Yes, the explanation covers basic steps
+like loading data, filtering, summarizing, and visualizing. It is clear
+and useful for beginners.

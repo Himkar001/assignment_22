@@ -1,0 +1,31 @@
+PART C — Interview Ready
+
+1.  Q1 — What is the difference between loc and iloc in Pandas?
+
+Answer: loc is label-based indexing, which uses row labels and column
+names. iloc is index-based indexing, which uses integer positions.
+
+------------------------------------------------------------------------
+
+2.  Q2 (Coding) — Filter rows where a column value is greater than
+    average
+
+Code: avg_price = df[‘price’].mean() df[df[‘price’] > avg_price]
+
+Output: Rows where price is greater than the average price.
+
+Explanation: First, the average is calculated using mean(). Then rows
+are filtered where values exceed the average.
+
+------------------------------------------------------------------------
+
+3.  Q3 — What is the purpose of describe()? What insights can we get
+    from it?
+
+Answer: describe() provides a statistical summary of numerical columns.
+
+Output: Includes count, mean, standard deviation, minimum, maximum, and
+quartiles.
+
+Explanation: It helps understand data distribution, detect outliers,
+analyze spread, and compare features quickly.

@@ -1,0 +1,83 @@
+PART A — Concept Application
+
+Dataset: Diamonds dataset (50000+ rows)
+
+1.  Data Selection using Pandas
+
+Code: df.loc[0:4, [‘carat’, ‘price’]] df.loc[10:15, [‘cut’, ‘color’]]
+df.loc[:, [‘price’]]
+
+df.iloc[0:5, 0:2] df.iloc[10:20, 2:5] df.iloc[0]
+
+Output: Displays selected rows and columns based on labels (loc) and
+index positions (iloc).
+
+Explanation: loc is label-based selection, while iloc is index-based
+selection.
+
+------------------------------------------------------------------------
+
+2.  Filtering Data
+
+Code: df[(df[‘price’] > 5000) & (df[‘carat’] > 1)] df[df[‘cut’] ==
+‘Premium’] df[df[‘price’] > 10000]
+
+Output: Filtered subsets of diamonds based on conditions.
+
+Explanation: Filtering helps extract meaningful subsets like high-value
+or specific category diamonds.
+
+------------------------------------------------------------------------
+
+3.  Descriptive Statistics
+
+Code: df.describe()
+
+Output: Summary including mean, std, min, max for numerical columns.
+
+Explanation: Mean shows average values, std shows spread, min and max
+show range.
+
+------------------------------------------------------------------------
+
+4.  Histogram
+
+Code: plt.hist(df[‘price’], bins=30) plt.xlabel(“Price”)
+plt.ylabel(“Frequency”) plt.title(“Price Distribution”) plt.show()
+
+Output: Histogram of diamond prices.
+
+Explanation: Distribution is right-skewed, with many low-price diamonds
+and few high-price ones.
+
+------------------------------------------------------------------------
+
+5.  Bar Plot
+
+Code: sns.barplot(x=‘cut’, y=‘price’, data=df) plt.title(“Average Price
+by Cut”) plt.show()
+
+Output: Bar chart comparing average price across different cuts.
+
+Explanation: Shows which category has higher average price.
+
+------------------------------------------------------------------------
+
+6.  Line Chart
+
+Code: df[‘price’].head(100).plot() plt.xlabel(“Index”)
+plt.ylabel(“Price”) plt.title(“Price Trend”) plt.show()
+
+Output: Line plot of price over index.
+
+Explanation: Shows variation in price, no clear trend.
+
+------------------------------------------------------------------------
+
+7.  KDE Plot
+
+Code: sns.kdeplot(df[‘price’]) plt.title(“Density Plot”) plt.show()
+
+Output: Smooth density curve of price distribution.
+
+Explanation: Shows distribution shape and confirms skewness.
